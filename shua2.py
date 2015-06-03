@@ -21,25 +21,6 @@ def makeIP():
 
 if __name__ == '__main__':
 	makeIP()
-	imageHeaders={"Accept":"image/webp,*/*;q=0.8",
-			"Accept-Encoding":"gzip, deflate, sdch",
-			"Accept-Language":"zh-CN,zh;q=0.8",
-			"Cache-Control":"max-age=0",
-			"Connection":"keep-alive",
-			"Host":"vote.moveredu.com",
-			"Referer":"http://vote.moveredu.com/yzm.asp?id=49",
-			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36"}
-	resultHeaders = {"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-			"Accept-Encoding":"gzip, deflate",
-			"Accept-Language":"zh-CN,zh;q=0.8",
-			"Cache-Control":"max-age=0",
-			"Connection":"keep-alive",
-			"Content-Length":"51",
-			"Content-Type":"application/x-www-form-urlencoded",
-			"Host":"vote.moveredu.com",
-			"Origin":"http://vote.moveredu.com",
-			"Referer":"http://vote.moveredu.com/yzm.asp?id=49",
-			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36"}
 	createDataSet()
 	for i in range(1,10000):
 		try:
@@ -57,6 +38,27 @@ if __name__ == '__main__':
 			"Connection":"keep-alive",
 			"Host":"vote.moveredu.com",
 			"Referer":"http://vote.moveredu.com/index.asp",
+			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36"}
+			imageHeaders={"X-Forwarded-For":ip,
+			"Accept":"image/webp,*/*;q=0.8",
+			"Accept-Encoding":"gzip, deflate, sdch",
+			"Accept-Language":"zh-CN,zh;q=0.8",
+			"Cache-Control":"max-age=0",
+			"Connection":"keep-alive",
+			"Host":"vote.moveredu.com",
+			"Referer":"http://vote.moveredu.com/yzm.asp?id=49",
+			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36"}
+			resultHeaders = {"X-Forwarded-For":ip,
+			"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+			"Accept-Encoding":"gzip, deflate",
+			"Accept-Language":"zh-CN,zh;q=0.8",
+			"Cache-Control":"max-age=0",
+			"Connection":"keep-alive",
+			"Content-Length":"51",
+			"Content-Type":"application/x-www-form-urlencoded",
+			"Host":"vote.moveredu.com",
+			"Origin":"http://vote.moveredu.com",
+			"Referer":"http://vote.moveredu.com/yzm.asp?id=49",
 			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36"}
 			s1 = requests.get('http://vote.moveredu.com/yzm.asp?id=49', headers=headers, cookies=cookies)
 			s2 = requests.get('http://vote.moveredu.com/aspyzm/code_25.asp', headers=imageHeaders, cookies=cookies)
