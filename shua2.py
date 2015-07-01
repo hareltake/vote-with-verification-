@@ -22,12 +22,13 @@ def makeIP():
 if __name__ == '__main__':
 	makeIP()
 	createDataSet()
-	for i in range(1,10000):
+	for i in range(1,2000):
 		try:
 			t = random.randint(4, 10)
 			if i % 50 == 0:
 				t = 15
 			print t
+			time.sleep(t)
 			r = requests.get('http://vote.moveredu.com')
 			cookies = dict(r.cookies)
 			ip = ipPoor[random.randint(0,1120)]

@@ -44,20 +44,6 @@ def createDataSet():
 	    classNumStr = fileStr.split('_')[0]
 	    hwLabels.append(classNumStr)
 	    trainingMat[i,:] = img2vec('dataSet/'+fileName)
-	# testFileList = os.listdir(testFloder)
-	# errorCount = 0.0
-	# mTest = len(testFileList)
-	# for i in range(mTest):
-	#     fileName = testFileList[i]
-	#     fileStr = fileName.split('.')[0]
-	#     classNumStr = int(fileStr.split('_')[0])
-	#     vectorUnderTest = img2vec(testFloder+'/'+fileName)
-	#     classifierResult = kNNclassify(vectorUnderTest, trainingMat, hwLabels, K)
-	#     #print classifierResult,' ',classNumStr
-	#     if classifierResult != classNumStr:
-	#         errorCount +=1
-	# print 'tatal error ',errorCount
-	# print 'error rate',errorCount/mTest
 
 def getResult():
 	resultStr = ''
